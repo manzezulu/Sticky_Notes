@@ -85,7 +85,7 @@ Run the automated test suite (17 tests covering the model, form, and every
 CRUD view):
 
 ```bash
-python manage.py test notes -v 2
+python manage.py test notes
 ```
 
 ## Diagrams
