@@ -1,8 +1,6 @@
-# Sticky Notes — Django Application (Parts 1 & 2)
+# Sticky Notes — Django Application
 
-A Django app that lets a user create, view, update, and delete sticky notes,
-built for the HyperionDev "Django — Sticky Notes Application" Part 1 and
-Part 2 tasks.
+A Django app that lets a user create, view, update, and delete sticky notes.
 
 ## Project structure
 
@@ -10,7 +8,7 @@ Part 2 tasks.
 sticky_notes/
 ├── manage.py
 ├── db.sqlite3                 (empty — created fresh by migrate)
-├── research_answers.md        (Part 2 answers)
+├── research_answers.md        
 ├── diagrams/
 │   ├── use_case_diagram.svg
 │   ├── sequence_diagram.svg
@@ -90,23 +88,8 @@ CRUD view):
 python manage.py test notes -v 2
 ```
 
-See `TEST_REPORT.md` for the full test output and a manual testing log.
-
 ## Diagrams
 
 
 See the `diagrams/` folder for the use case, sequence, and class diagrams
 covering this application's design.
-
-## GitHub
-
-This project should also be pushed to a public GitHub repository as part
-of your developer portfolio. See `sticky_github.txt` for step-by-step
-instructions — the repository link itself needs to be added by you, since
-pushing to your own GitHub account isn't something that can be done for
-you.
-
-## Note
-
-The `venv/` folder has been excluded from this submission, as instructed —
-recreate it using the setup steps above.
