@@ -1,0 +1,22 @@
+<!-- notes/templates/notes/note_confirm_delete.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Sticky Notes - Delete {{ note.title }}
+{% endblock %}
+
+{% block content %}
+  <h2 class="page-heading">Delete note</h2>
+
+  <article class="note-detail" style="background-color: {{ note.colour }};">
+    <p>Are you sure you want to delete the note titled <strong>&ldquo;{{ note.title }}&rdquo;</strong>? This cannot be undone.</p>
+
+    <form method="post" class="note-form">
+      {% csrf_token %}
+      <div class="note-actions">
+        <button type="submit" class="btn btn-danger">Yes, delete it</button>
+        <a href="{% url 'note_detail' pk=note.pk %}" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </article>
+{% endblock %}

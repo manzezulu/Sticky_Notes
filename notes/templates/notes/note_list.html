@@ -1,0 +1,35 @@
+<!-- notes/templates/notes/note_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Sticky Notes - {{ page_title }}
+{% endblock %}
+
+{% block content %}
+  <h2 class="page-heading">{{ page_title }}</h2>
+
+  {% if notes %}
+    <div class="note-board">
+      {% for note in notes %}
+        <article class="note-card" style="background-color: {{ note.colour }};">
+          <a href="{% url 'note_detail' pk=note.pk %}" class="note-link">
+            <h3 class="note-title">{{ note.title }}</h3>
+            <p class="note-preview">{{ note.content|truncatewords:20 }}</p>
+          </a>
+          <div class="note-meta">
+            <span>{{ note.updated_at|date:"d M Y, H:i" }}</span>
+          </div>
+          <div class="note-actions">
+            <a href="{% url 'note_update' pk=note.pk %}" class="btn btn-small">Edit</a>
+            <a href="{% url 'note_delete' pk=note.pk %}" class="btn btn-small btn-danger">Delete</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">
+      You don't have any sticky notes yet.
+      <a href="{% url 'note_create' %}">Create your first one</a>.
+    </p>
+  {% endif %}
+{% endblock %}

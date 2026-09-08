@@ -1,0 +1,38 @@
+<!-- notes/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Sticky Notes
+      {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'notes/styles.css' %}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>
+        <a href="{% url 'note_list' %}" class="site-title">
+          {% block header %}
+            Sticky Notes
+          {% endblock header %}
+        </a>
+      </h1>
+      <nav>
+        <a href="{% url 'note_create' %}" class="btn btn-add">+ New note</a>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+
+    <footer class="site-footer">
+      <p>Sticky Notes by Malizahloso Starbridge Technologies.</p>
+    </footer>
+  </body>
+</html>
